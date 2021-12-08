@@ -25,16 +25,6 @@ inquirer
     },
     {
       type: "input",
-      message: "Tell me about yourself",
-      name: "bio",
-    },
-    {
-      type: "input",
-      message: "What is your LinkedIn URL?",
-      name: "linkedin",
-    },
-    {
-      type: "input",
       message: "What is your email?",
       name: "email",
     },
