@@ -1,5 +1,8 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
+const Manager = require("./lib/manager.js");
+const Engineer = require("./lib/engineer.js");
+const Intern = require("./lib/intern.js");
 
 const questions = [
   {
@@ -88,6 +91,13 @@ const intern = [
 ];
 
 inquirer.prompt(questions).then((response) => {
+  let manager = new Manager(
+    response.managerName,
+    response.managerID,
+    response.managerEmail,
+    response.managerOffice
+  );
+  console.log(manager);
   newbie();
   // if (response.addEmployee)
   // fs.writeFile(
@@ -118,13 +128,36 @@ inquirer.prompt(questions).then((response) => {
 
 function newbie() {
   inquirer.prompt(newEmployee).then((res) => {
-    console.log(res.addEmployee);
     res.addEmployee === "Yes"
       ? inquirer.prompt(employeeType).then((response) => {
           response.engineerIntern === "Engineer"
-            ? inquirer.prompt(engineer)
-            : inquirer.prompt(intern);
+            ? engineerQuestions()
+            : internQuestions();
         })
       : console.log("Team Profile Generated!");
+  });
+}
+
+function engineerQuestions() {
+  inquirer.prompt(engineer).then((engineerResponse) => {
+    let newEngineer = new Engineer(
+      engineerResponse.engineerName,
+      engineerResponse.engineerID,
+      engineerResponse.engineerEmail,
+      engineerResponse.engineerGithub
+    );
+    newbie();
+  });
+}
+
+function internQuestions() {
+  inquirer.prompt(intern).then((internResponse) => {
+    let newIntern = new Intern(
+      internResponse.internName,
+      internResponse.internID,
+      internResponse.internEmail,
+      internResponse.internSchool
+    );
+    newbie();
   });
 }
