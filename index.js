@@ -31,7 +31,7 @@ const questions = [
 const newEmployee = [
   {
     type: "list",
-    message: "Would you like to add an employee to the team?",
+    message: "Would you like to add another employee to the team?",
     name: "addEmployee",
     choices: ["Yes", "No"],
   },
@@ -114,7 +114,9 @@ function newbie() {
             : internQuestions();
         })
       : fs.writeFile("index.html", createTemplate(employees), (err) =>
-          err ? console.error(err) : console.log("Team Profile Generated!")
+          err
+            ? console.error(err)
+            : console.log("Team Profile Generated in index.html")
         );
   });
 }
