@@ -1,10 +1,10 @@
 # Team Profile Generator
 
 ![MIT](https://img.shields.io/badge/license-MIT-blue)
-  
+
 ## Description
 
-This project is a node.js command-line application that takes in information about employees and then generates and HTML webpage that displays summaries for each person. It works by running a series of questions through the command line using the inquirer package for the user to input information about a team manager and as many engineers and/or interns as desired. 
+This project is a node.js command-line application that takes in information about employees and then generates and HTML webpage that displays summaries for each person. It works by running a series of questions through the command line using the inquirer package for the user to input information about a team manager and as many engineers and/or interns as desired.
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@ This project is a node.js command-line application that takes in information abo
 - [Contributing](#contributing)
 - [Testing](#testing)
 - [Questions](#questions)
-  
+
 ## Installation
 
 Download the repository and simply run npm i in the command-line to install the required packages.
@@ -23,8 +23,12 @@ Download the repository and simply run npm i in the command-line to install the 
 
 Run index.js in the command-line and answer the questions in order to generate an HTML webpage for your own team of employees.
 
+You can see a walk through of the application below:
+
+![User walk through of command line README.md generator application](./images/TeamProfile.gif)
+
 ## License
-  
+
 This application is covered under the MIT license.
 
 ## Contributing
